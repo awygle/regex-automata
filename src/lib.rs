@@ -282,6 +282,7 @@ With some of the downsides out of the way, here are some positive differences:
   increase compilation times dramatically.
 */
 
+#![allow(warnings)]
 #![deny(missing_docs)]
 #![cfg_attr(not(feature = "std"), no_std)]
 
@@ -316,6 +317,8 @@ mod error;
 mod minimize;
 #[cfg(feature = "std")]
 mod nfa;
+#[cfg(feature = "std")]
+mod range_trie;
 mod regex;
 #[path = "sparse.rs"]
 mod sparse_imp;

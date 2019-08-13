@@ -2245,7 +2245,7 @@ mod tests {
 
     #[test]
     fn errors_when_converting_to_smaller_dfa() {
-        let pattern = r"\w";
+        let pattern = r"\w{10}";
         let dfa = Builder::new()
             .byte_classes(false)
             .anchored(true)
@@ -2257,7 +2257,7 @@ mod tests {
 
     #[test]
     fn errors_when_determinization_would_overflow() {
-        let pattern = r"\w";
+        let pattern = r"\w{10}";
 
         let mut builder = Builder::new();
         builder.byte_classes(false).anchored(true).premultiply(false);
